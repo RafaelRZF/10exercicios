@@ -33,4 +33,8 @@ public class Editora {
         this.nome = nome;
         this.cidade = cidade;
     }
+
+    public Editora(){
+
+    }
 }
