@@ -53,4 +53,8 @@ public class Livro {
         this.autor_id = autor_id;
         this.editora_id = editora_id;
     }
+
+    public Livro(){
+
+    }
 }
