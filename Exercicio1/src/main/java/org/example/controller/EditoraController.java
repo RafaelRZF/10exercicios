@@ -1,4 +1,12 @@
 package org.example.controller;
+import org.example.dao.Conexao;
+import org.example.models.Editora;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class EditoraController {
     public void cadastrar(Editora editora) {
@@ -19,7 +27,7 @@ public class EditoraController {
         }
     }
 
-    public List<Autor> listar() {
+    public List<Editora> listar() {
         String sql = "SELECT * FROM Editora";
         List<Editora> listaEditoras = new ArrayList<>();
 
@@ -33,7 +41,7 @@ public class EditoraController {
                         Editora editora = new Editora();
                         editora.setId(rs.getInt("id"));
                         editora.setNome(rs.getString("nome"));
-                        editora.setNacionalidade(rs.getString("nacionalidade"));
+                        editora.setCidade(rs.getString("cidade"));
 
                         listaEditoras.add(editora);
                     }
