@@ -10,12 +10,13 @@ import java.util.List;
 
 public class AutorController {
     public void cadastrar(Autor autor) {
-        String sql = "INSERT INTO Autor (nome) VALUES (?)";
+        String sql = "INSERT INTO Autor (nome, nacionalidade) VALUES (?, ?)";
         try (Connection conn = Conexao.obterConexao()) {
 
             if (conn != null) {
                 try (PreparedStatement stmt = conn.prepareStatement(sql)) {
                     stmt.setString(1, autor.getNome());
+                    stmt.setString(2, autor.getNacionalidade());
                     stmt.executeUpdate();
                     System.out.println("Autor cadastrado com sucesso!");
                 }
@@ -40,7 +41,7 @@ public class AutorController {
                         Autor autor = new Autor();
                         autor.setId(rs.getInt("id"));
                         autor.setNome(rs.getString("nome"));
-
+                        autor.setNacionalidade(rs.getString("nacionalidade"));
                         listaAutores.add(autor);
                     }
                 }
@@ -59,6 +60,7 @@ public class AutorController {
                 try (PreparedStatement stmt = conn.prepareStatement(sql)) {
                     stmt.setString(1, autor.getNome());
                     stmt.setInt(2, autor.getId());
+                    stmt.setString(3, autor.getNacionalidade());
 
                     int linhasAfetadas = stmt.executeUpdate();
                     if (linhasAfetadas > 0) {
