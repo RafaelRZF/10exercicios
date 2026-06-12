@@ -8,7 +8,7 @@ O projeto foi estruturado seguindo o padrão **MVC (Model-View-Controller)** sim
 
 ## 👥 Organização e Autores
 
-O trabalho foi distribuído igualmente entre a dupla, onde cada integrante ficou responsável pelo desenvolvimento de 5 atividades completas (Modelagem, SQL, Models, Controllers e Telas):
+O trabalho foi distribuído igualmente entre a dupla, onde cada integrante ficou responsável pelo desenvolvimento de 5 atividades completas (SQL, Models, Controllers e Telas):
 
 ### 🛠️ Desenvolvido por Vinicius Almeida
 * **Exercício 1
